@@ -1,0 +1,13 @@
+= NKeys and JWT User Credentials
+
+Since v0.9.0 release, you can also optionally install NKEYS in order to use the new NATS v2.0 auth features:
+
+----
+pip install nats-py[nkeys]
+----
+
+Usage:
+
+----
+await nats.connect("tls://connect.ngs.global:4222", user_credentials="/path/to/secret.creds")
+----

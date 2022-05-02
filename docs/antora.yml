@@ -1,0 +1,5 @@
+name: nats-py
+title: Nats Python3 Client
+version: main
+nav:
+- modules/ROOT/nav.adoc

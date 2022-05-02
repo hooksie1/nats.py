@@ -1,0 +1,39 @@
+= TLS
+
+
+TLS connections can be configured with an ssl context
+
+[source]
+----
+ssl_ctx = ssl.create_default_context(purpose=ssl.Purpose.SERVER_AUTH)
+ssl_ctx.load_verify_locations('ca.pem')
+ssl_ctx.load_cert_chain(certfile='client-cert.pem',
+                        keyfile='client-key.pem')
+await nats.connect(servers=["tls://127.0.0.1:4443"], tls=ssl_ctx, tls_hostname="localhost")
+----
+
+Setting the scheme to tls in the connect URL will make the client create a default ssl context automatically:
+
+[source]
+----
+import asyncio
+import ssl
+from nats.aio.client import Client as NATS
+
+async def run():
+    nc = NATS()
+    await nc.connect("tls://demo.nats.io:4443")
+----
+
+Note: If getting SSL certificate errors in OS X, try first installing the certifi certificate bundle. If using Python 3.7 for example, then run:
+
+----
+$ /Applications/Python\ 3.7/Install\ Certificates.command
+ -- pip install --upgrade certifi
+Collecting certifi
+...
+ -- removing any existing file or link
+ -- creating symlink to certifi certificate bundle
+ -- setting permissions
+ -- update complete
+ ----

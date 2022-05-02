@@ -20,4 +20,3 @@ htmlcov
 venv
 lib/*
 _examples/*
-docs/*

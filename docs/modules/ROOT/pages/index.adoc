@@ -1,0 +1,22 @@
+= Overview
+
+An https://docs.python.org/3/library/asyncio.html[asyncio] Python client for the https://nats.io/[NATS messaging system].
+
+== Supported Platforms
+
+Should be compatible with at least https://docs.python.org/3.7/library/asyncio.html[Python +3.7].
+
+== Installation
+
+[source,python]
+----
+pip install nats-py
+----
+
+
+== Development
+
+1. https://docs.nats.io/running-a-nats-service/introduction/installation[Install NATS server]
+2. Make sure the server is available in your PATH: `nats-server -v`.
+3. Install dependencies: `python3 -m pipenv install --dev`.
+4. Run tests: `python3 -m pytest`.
