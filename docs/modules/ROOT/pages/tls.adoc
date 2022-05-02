@@ -26,7 +26,7 @@ async def run():
     await nc.connect("tls://demo.nats.io:4443")
 ----
 
-Note: If getting SSL certificate errors in OS X, try first installing the `certifi` certificate bundle. If using Python 3.7 for example, then run:
+NOTE: If getting SSL certificate errors in OS X, try first installing the `certifi` certificate bundle. If using Python 3.7 for example, then run:
 
 ----
 $ /Applications/Python\ 3.7/Install\ Certificates.command

@@ -1,8 +1,7 @@
 = Jetstream
 :source-language: python
 
-NOTE:
-Starting with v2.0.0, the client now has JetStream support.
+NOTE: Starting with v2.0.0, the client now has JetStream support.
 
 [source]
 ----
