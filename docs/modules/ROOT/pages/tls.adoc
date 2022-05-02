@@ -1,7 +1,7 @@
 = TLS
 
 
-TLS connections can be configured with an ssl context
+TLS connections can be configured with an https://docs.python.org/3/library/ssl.html#context-creation[ssl context]
 
 [source]
 ----
@@ -12,7 +12,7 @@ ssl_ctx.load_cert_chain(certfile='client-cert.pem',
 await nats.connect(servers=["tls://127.0.0.1:4443"], tls=ssl_ctx, tls_hostname="localhost")
 ----
 
-Setting the scheme to tls in the connect URL will make the client create a default ssl context automatically:
+Setting the scheme to tls in the connect URL will make the client create a https://docs.python.org/3/library/ssl.html#ssl.create_default_context[default ssl context] automatically:
 
 [source]
 ----
@@ -25,7 +25,7 @@ async def run():
     await nc.connect("tls://demo.nats.io:4443")
 ----
 
-Note: If getting SSL certificate errors in OS X, try first installing the certifi certificate bundle. If using Python 3.7 for example, then run:
+Note: If getting SSL certificate errors in OS X, try first installing the `certifi` certificate bundle. If using Python 3.7 for example, then run:
 
 ----
 $ /Applications/Python\ 3.7/Install\ Certificates.command
@@ -36,4 +36,4 @@ Collecting certifi
  -- creating symlink to certifi certificate bundle
  -- setting permissions
  -- update complete
- ----
+----
